@@ -1,0 +1,31 @@
+I/ Se connecter:
+
+	1- Ouvrir le fichier config.php
+
+	2- Les valeurs des 4 premières variables sont à modifier en fonction de votre identifiant.
+
+	3- La variable `$dbname` est le nom de la base de données prise, pour y créer ensuite les tables.
+		Si vous souhaitez créer une base de données, suivre la partie III/.
+
+	4- La 5ème variable `$mail` est l'adresse mail destinataire des messages envoyés depuis la page "Contactez-nous".
+		Ecrivez votre adresse mail pour pouvoir tester l'envoi de messages (souvent placé dans courrier indésirable).
+		==> Plus d'explications à ce sujet se trouvent dans le fichier <architecture.txt>, en fin de fichier.
+
+
+II/ Initialisation de la base de données:
+
+	1- La création des tables est dans le fichier <install.php>. 
+		Deux pétitions sont automatiquement insérés lors de la création des tables.
+
+	2- La création des tables est effectuée automatiquement lorsque vous générez une des pages du site, car le fichier <install.php> y est inclut.
+
+
+III/ Création d'une base de données:
+
+	1- Dans <config.php>, enlevez la variable $dbname.
+
+	2- Dans <install.php>, décommentez les lignes 6 à 11.
+
+	3- A la ligne 6, remplacez `webproject` par le nom de la base de données que vous souhaitez créer.
+
+	4- A la ligne 11, remplacez `webproject` par le nom de la bdd choisie.

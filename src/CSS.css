@@ -1,0 +1,17 @@
+
+
+fieldset
+{	
+	border-width: 3px;
+	border-style: inset;
+	border-color: red;
+	border-top-right-radius:20px;
+	border-top-left-radius:20px;	
+	border-bottom-right-radius:20px;
+	border-bottom-left-radius:20px;
+	padding: 20px;
+	margin: 25px;
+	box-shadow: 5px 5px 5px #ffaaaa;
+	width:600px;
+	height:100px
+}

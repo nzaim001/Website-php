@@ -1,0 +1,54 @@
+fieldset
+{	
+	border-width: 3px;
+	border-style: inset;
+	border-color: red;
+	border-top-right-radius:20px;
+	border-top-left-radius:20px;	
+	border-bottom-right-radius:20px;
+	border-bottom-left-radius:20px;
+	padding: 20px;
+	margin: 20px;
+	box-shadow: 5px 5px 5px #ffaaaa;
+	width:600px;
+	height:450px;
+}
+
+textarea 
+{
+  	height: 200px;
+  	line-height: 150%;
+  	resize:vertical;
+  	width: 250px;
+}
+
+.errormsg
+{
+	color: red;
+	font-size: 10px;
+}
+
+.alert
+{
+	padding: 15px;
+	margin-bottom:20px;
+	border: 1px dashed transparent;
+	border-radius: 5px;
+}
+
+.alert-danger
+{
+	background-color: #ff5055;
+	border-color: #d6e9c6;
+ }
+
+.alert-success
+{
+	background-color: #55ffa8;
+	border-color: #ebccd1;
+}
+
+[type="submit"]:hover 
+{
+	background:#65537A; 
+}

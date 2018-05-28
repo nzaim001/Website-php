@@ -1,0 +1,167 @@
+﻿|| DESCRIPTIONS DES FICHIERS ||
+
+_ src/config.php : 
+	permet de configurer votre identifiant pour vous connecter à vos base de données.
+	voir fichier <installation.txt>
+
+_ src/install.php : 
+	crée les tables nécessaires, avec quelques pétitions de base dans le site de pétition.
+	voir fichier <installation.txt>
+
+_ src/acceuil.php : 
+	Page d'accueil de notre site qui affiche des sujets déjà écrits dans notre fichier.
+	Un carousel a été fait, ce qui permet de défiler ici parmi deux sujets principaux.
+	D'autres sujets sont écrites plus bas.
+	Une vidéo peut également être vu (vidéo football).
+
+_ src/menu.php : 
+	notre interface menu avec 3 onglets principaux : 
+		"Pétition"->"Parcourir les pétitions"
+					"Annoncer une pétition"
+		"Entreprise"->"A propos"
+					  "Equipe"
+		"Contactez-nous"
+
+	¤ Dans "Pétition", il y a "Parcourir les pétitions" pour voir toutes les pétitions dans l'ordre anti-chronologique ; et "Annoncer une pétition" pour annoncer une pétition à condition d'être connecté. Sinon, renvoie directement à la page de connexion.
+	¤ Dans "Entreprise", quelques petits renseignement à propos du site, et du binôme avec photos inclus.
+	¤ Dans "Contactez-nous", vous pouvez envoyer un message à un destinataire précisé dans la variable `$mail` du fichier <config.php>. Voir les informations dans la partie src/contact.php
+
+_ src/entete.php : 
+	crée les en-têtes qu'on peut voir en haut à droite de chaque page, avec le logo de la main en plus `Skills for change`. Ce logo nous ammène directement vers l'accueil.
+	Lorsqu'on est non connecté, les boutons qui s'affichent sont "Connexion", "Inscription", et "Acceuil".
+	Lorsqu'on est connecté, les boutons qui s'affichent sont:
+		"Profil"->"Voir mon Profil"
+				->"Editer mon profil"
+				->"Déconnexion"
+		"Acceuil"
+
+_ src/footer.php : 
+	ce qui se trouve en bas de chaque page du site.
+
+_ src/inscription.php : 
+	cette page demande votre nom, prénom, pseudo, mail, et mot de passe à confirmer 2 fois.
+	Si le mail existait déjà dans la table `Formulaire` regroupant les données de chaque compte inscrit, retourne un message d'erreur rouge.
+	Tous les champs doivent être remplis. Si un des champs est non rempli, il sera indiqué précisément en rouge juste à côté.
+	Un champ rouge en en-tête de page vous indique aussi que les champs ne sont pas tous remplis.
+
+_ src/connexion.php :
+	cette page demande votre adresse mail et votre mot de passe. Si ces deux champs ne sont pas dans la table `Formulaire` (vous ne vous êtes donc pas inscrit), le message "Mail ou mot de passe incorrect" est affiché.
+	A l'issue d'une connexion valide, le site vous retourne immédiatement vers votre page de profil.
+
+_ src/profil.php :
+	Cette page récapitule vos données personnelles (nom, prénom, pseudo, mail, nombre de pétitions créés et signés).
+	Elle rappelle aussi les titres des pétitions auxquels vous avez contribués par votre signature apposée.
+	Pour se déconnecter, appuyer sur le bouton "Déconnexion".
+
+_ src/editprofil.php :
+	Permet d'éditer votre profil, en demandant votre nouveau mail, nouveau pseudo et nouveau mot de passe à confirmer 2 fois.
+	Les champs des mots de passe et du pseudo doivent être tous remplis pour pouvoir mettre à jour, sinon retourne message d'erreur.
+	A l'issue d'une édition de profil valide, les anciens posts de pétitions que vous aviez faites restent inchangés, seul le nom de l'auteur pseudo est bien modifiée.
+
+_ src/petition.php :
+	Pour annoncer une nouvelle pétition à condition d'être connecté.
+	Recquiert de donner un titre, la catégorie parmi ceux disponibles, le sujet de la pétition, et le nombre de signatures souhaités.
+	Tous les champs doivent être remplies, sinon, affiche message d'erreur là où le champ n'est pas remplie. Les champs titre et sujet sont gardées en cas de validation erronée.
+	Un message de validation est affiché lorsque tout est rempli.
+
+_ src/parcourir_petition.php :
+	page qui répertorie toutes les pétitions publiées déroulées par date anti-chronologique.
+	Une liste de catégories se trouve en-dessous du menu, et permet de sélectionner les catégories en questions.
+	Chacune des pétitions parues sont données avec leur titre et l'auteur, ainsi que la date de publication. Le sujet de chaque pétition est écourtée à 50 caractères.
+	"...*" est ajouté à la fin pour signifier le bouton de lien "*Voir la suite" juste en bas de la pétition, et qui permet de voir intégralement la pétition choisie.
+
+_ src/parcourir_politique.php : 
+	répertorie toutes les pétitions sous la catégorie "politique".
+		Les autres fonctionnalités sont dites 
+		dans la partie src/parcourir_petition.php
+
+_ src/parcourir_environnement.php :
+	répertorie toutes les pétitions sous la catégorie "environnement".
+		Les autres fonctionnalités sont dites 
+		dans la partie src/parcourir_petition.php
+
+_ src/parcourir_familial.php :
+	répertorie toutes les pétitions sous la catégorie "familial".
+		Les autres fonctionnalités sont dites 
+		dans la partie src/parcourir_petition.php
+
+_ src/parcourir_sante.php :
+	répertorie toutes les pétitions sous la catégorie "santé".
+		Les autres fonctionnalités sont dites 
+		dans la partie src/parcourir_petition.php
+
+_ src/parcourir_autres.php :
+	répertorie toutes les pétitions sous la catégorie "autres".
+		Les autres fonctionnalités sont dites 
+		dans la partie src/parcourir_petition.php
+
+_ src/page.php :
+	à chaque fois qu'on appuie sur "*Voir la suite" dans notre parcours de pétition, une variable GET['id'] est sauvegardée.
+	Cette variable permet de savoir l'id de la pétition en question qu'on pourra ensuite choisir la pétition correspondante dans notre table `petitions` regroupant toutes les pétitions existantes.
+
+	Dans cette page, tout le sujet de la pétition est montré. 
+	Il y a également un tableau qui récapitule le nombre de signatures voulus avec ceux déjà obtenus. 
+	Le bouton "signer la pétition" permet de signer, et un message bleu s'affiche après validation et l'incrémentation du nombre de signatures obtenue est automatique.
+	Si déjà signé, un autre message s'affiche indiquant que vous avez déjà signé.
+	Si non connecté, un message s'affiche vous indiquant de vous connecter ou bien de vous inscrire pour signer.
+	Lorsque le nombre de signature souhaité est atteint, un message sous fond vert apparaît en tête du sujet de la pétition.
+
+_ src/a_propos.php :
+	Cette page parle du site en question et de son intérêt.
+	Des liens sur d'autres sites officiels sont également présentés.
+
+_src/Equipe.php :
+	Quelques informations nous concernant, avec ajout de nos photos de profil.
+
+_ src/contact.php :
+	Via le bouton "Contactez-nous" de la barre de menu.
+	Votre nom, votre mail, l'objet de votre message ainsi que son contenu vous est demandé afin d'envoyer votre message au destinataire.
+	Sur cette page, votre message est envoyé à un mail destinataire indiqué dans le code de ce fichier.
+
+	==> Dans le fichier <config.php>, changez la valeur de la 5ème variable `$mail` par votre propre adresse mail (de préférence gmail).
+	Celui ci sera l'adresse du destinataire qui recevra le message. L'envoi du message prend un certain temps...
+	Cette modification fonctionne directement sur les ordinateurs de l'école.
+	Le message envoyé sera cependant dans votre boîte de Spam (ou Courrier Indésirable).
+
+	¤ Si vous utilisez WAMP, voici la configuration nécessaire à effectuer :
+	
+	//!\\	 Configurer sur WAMP	//!\\
+		SI vous utilisez WAMP, voici la procédure à suivre.
+
+		1- Téléchargez < sendmail > .
+
+		2- Extraire le dossier et le mettre dans votre dossier wamp/sendmail à créer également.
+
+		3- A l'intérieur du dossier, prendre le fichier <sendmail.ini> et le modifier pour gmail :
+
+				smtp_server=smtp.gmail.com
+
+				smtp_port=465
+
+				smtp_ssl=auto
+
+				default_domain=smtp.gmail.com 
+
+				error_logfile=error.log
+
+				auth_username=xxxxx@gmail.com 			//Votre adresse mail
+				auth_password=xxxxxxx					//Le mdp associé
+
+				force_sender=xxxxx@gmail.com
+
+		4- Allez ensuite sur l'icône WAMP, onglet php, puis selectionner <php.ini>, et le modifier comme suit pour gmail en recherchant `mail function` avec CTRL+F :
+
+				[mail function]
+				; For Win32 only.
+				; http://php.net/smtp
+				;SMTP =  
+				; http://php.net/smtp-port
+				smtp_port = 465
+
+				; For Win32 only.
+				; http://php.net/sendmail-from
+				;sendmail_from = 
+
+				; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
+				; http://php.net/sendmail-path
+				sendmail_path = "C:\Wamp\sendmail\sendmail.exe -t -i"

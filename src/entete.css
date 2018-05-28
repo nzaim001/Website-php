@@ -1,0 +1,129 @@
+
+#logo
+{
+	position: absolute;
+	left: 690px;
+	top:0px;
+}
+
+#profil
+{
+	font-size: 10px;
+	float: right;
+	display: inline-block;
+	width:80px;
+	vertical-align:middle;
+	text-align: center;
+	line-height: 0px;
+	height: 30px;
+	padding: 0px;
+	margin: 0px;
+	background-color: #65537A;
+	background-image:-webkit-linear-gradient(top, #65537A 0%, #2A2333 100%);
+	background-image:linear-gradient(to bottom, #65537A 0%, #2A2333 100%);
+}
+
+
+header
+{
+	background-color: #55bb67;
+	bottom:50px;	
+}
+
+.image_entete
+{
+    width:750px;
+    height: 150px;    
+}
+
+.image2_entete
+{
+	position:right;
+    width:800px;
+    height: 150px;
+}
+
+
+nav ul
+{
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;	
+}
+
+nav li 
+{
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+	width:200px;
+	height: 40px;
+	border-right: 3px solid #009922; 
+	text-align: center;
+	line-height: 40px;
+}
+
+nav li a
+{
+	text-decoration: none;
+	color:#65aaff;
+	display: block; /*mettre tout le block cliquable*/
+}
+
+nav li :hover
+{ /*pour colorer le block si la souris est en dessus*/
+	background-color: #55757f;
+}
+	
+input[type="submit"]
+{
+	color:#ffffff;
+	font-size: 10px;
+	float: right;
+	display: inline-block;
+	width:80px;
+	vertical-align:middle;
+	text-align: center;
+	line-height: 0px;
+	height: 29px;
+	padding: 0px;
+	margin: 0px;
+	background-color: #65537A;
+	background-image:-webkit-linear-gradient(top, #65537A 0%, #2A2333 100%);
+	background-image:linear-gradient(to bottom, #65537A 0%, #2A2333 100%);
+	
+}
+
+input[type="submit"]:hover
+{
+	background-color: #55757f;
+}
+
+
+/* css pour l'icone de recherche. */
+
+#recherche 
+{
+	width:208px;
+	height:29px;
+	background:white;
+	box-shadow:1px 1px 2px rgba(0,0,0,.3) inset;
+	border-radius:2em;
+}
+  
+#recherche input[type=text] 
+{
+	font:300 12px ;
+	width:180px;
+	padding:0 9px;
+	color:#666666;
+	float: right;
+}
+  
+#recherche input 
+{
+	height:29px;
+	width:20px;
+	float:right;
+	display:block;
+}

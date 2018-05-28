@@ -1,0 +1,152 @@
+#placemenu
+{
+	bottom:900px;
+}
+
+#menu, #menu ul
+{
+	padding:0;
+	margin:0;
+	list-style:none;
+	text-align:center;
+}
+
+#menu li
+{
+	display: block;
+	position:relative;
+	border-radius:8px 8px 0 0;
+}
+
+#menu ul li
+{
+	display:inherit;
+	border-radius:0;
+}
+
+#menu ul li:hover
+{
+	border-radius:0;
+}
+
+#menu ul li:last-child
+{
+	border-radius:0 0 8px 8px;
+}
+
+#menu ul
+{
+	position:absolute;
+	z-index: 1000;
+	max-height:0;
+	left: 0;
+	right: 0;
+	overflow:hidden;
+	-moz-transition: .8s all .1s;
+	-webkit-transition: .8s all .1s;
+	transition: .8s all .1s;
+}
+
+#menu li:hover ul
+{
+	max-height:10em;
+}
+
+/* background des liens menus */
+#menu li:first-child
+{
+	background-color: #65537A;
+	background-image:-webkit-linear-gradient(top, #65537A 0%, #2A2333 100%);
+	background-image:linear-gradient(to bottom, #65537A 0%, #2A2333 100%);
+}
+
+#menu li:nth-child(2)
+{
+	background-color: #65537A;
+	background-image:-webkit-linear-gradient(top, #65537A 0%, #2A2333 100%);
+	background-image:linear-gradient(to bottom, #65537A 0%, #2A2333 100%);
+}
+
+#menu li:last-child
+{
+	background-color: #65537A;
+	background-image:-webkit-linear-gradient(top, #65537A 0%, #2A2333 100%);
+	background-image:linear-gradient(to bottom, #65537A 0%, #2A2333 100%);
+}
+
+/* background des  sous menus */
+#menu li:first-child li
+{
+	background:#2A2333;
+}
+#menu li:nth-child(2) li
+{
+	background:#2A2333;
+}
+#menu li:last-child li
+{
+	background:#2A2333;
+}
+
+/* background des liens menus et sous menus au survol */
+#menu li:first-child:hover, #menu li:first-child li:hover
+{
+	background:#65537A;
+}
+
+#menu li:nth-child(2):hover, #menu li:nth-child(2) li:hover
+{
+	background:#65537A;
+}
+
+#menu li:last-child:hover, #menu li:last-child li:hover
+{
+	background:#65537A;
+}
+
+/* les a href */
+#menu a
+{
+	text-decoration:none;
+	display:block;
+	padding:8px 32px;
+	color:#FFFFFF;
+	font-family:arial;
+}
+
+#menu ul a
+{
+	padding:8px 0;
+}
+
+#menu li:hover li a
+{
+	color:#fff;
+	text-transform:inherit;
+}
+
+#menu li:hover a, #menu li li:hover a
+{
+	color:#000;
+}
+
+
+.alert
+{
+	padding: 15px;
+	margin-bottom:20px;
+	border: 1px dashed transparent;
+	border radius: 5px;
+}
+
+.alert-danger
+{
+	 background-color: #ff5055;
+	 border-color: #d6e9c6;
+ }
+
+.alert-success
+{
+	background-color: #55ffa8;
+	border-color: #ebccd1;
+ }
